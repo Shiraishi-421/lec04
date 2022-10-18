@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.group5.lec04.model.Chamber;
 import oit.is.group5.lec04.model.ChamberMapper;
-//import oit.is.group5.lec04.model.ChamberUser;
+import oit.is.group5.lec04.model.ChamberUser;
 //import oit.is.group5.lec04.model.UserInfo;
 
 /**
@@ -93,13 +93,13 @@ public class Sample41Controller {
     return "sample45.html";
   }
 
-  // @GetMapping("step7")
-  // @Transactional
-  // public String sample47(ModelMap model) {
-  // ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
-  // model.addAttribute("chamberUsers7", chamberUsers7);
-  // return "sample46.html";
-  // }
+  @GetMapping("step7")
+  @Transactional
+  public String sample47(ModelMap model) {
+    ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
+    model.addAttribute("chamberUsers7", chamberUsers7);
+    return "sample46.html";
+  }
 
   // @PostMapping("step8")
   // @Transactional
