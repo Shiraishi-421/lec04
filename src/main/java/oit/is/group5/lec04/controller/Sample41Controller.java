@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.group5.lec04.model.Chamber;
 import oit.is.group5.lec04.model.ChamberMapper;
-// import oit.is.group5.lec04.model.ChamberUser;
-// import oit.is.group5.lec04.model.UserInfo;
+//import oit.is.group5.lec04.model.ChamberUser;
+//import oit.is.group5.lec04.model.UserInfo;
 
 /**
  * /sample3へのリクエストを扱うクラス authenticateの設定をしていれば， /sample3へのアクセスはすべて認証が必要になる
@@ -43,10 +43,10 @@ public class Sample41Controller {
     return "sample45.html";
   }
 
-  // @GetMapping("step6")
-  // public String sample46() {
-  // return "sample46.html";
-  // }
+  @GetMapping("step6")
+  public String sample46() {
+    return "sample46.html";
+  }
 
   // /**
   // * 指定したidをPATHパラメータで受け取り，そのidに対応するデータを取得して返す
@@ -86,13 +86,12 @@ public class Sample41Controller {
     return "sample43.html";
   }
 
-  // @PostMapping("step5")
-  // public String sample45(@RequestParam String chamberName, ModelMap model) {
-  // ArrayList<Chamber> chambers5 =
-  // chamberMapper.selectAllByChamberName(chamberName);
-  // model.addAttribute("chambers5", chambers5);
-  // return "sample44.html";
-  // }
+  @PostMapping("step5")
+  public String sample45(@RequestParam String chamberName, ModelMap model) {
+    ArrayList<Chamber> chambers5 = chamberMapper.selectAllByChamberName(chamberName);
+    model.addAttribute("chambers5", chambers5);
+    return "sample45.html";
+  }
 
   // @GetMapping("step7")
   // @Transactional
