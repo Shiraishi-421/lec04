@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
- import oit.is.group5.lec04.model.Chamber;
- import oit.is.group5.lec04.model.ChamberMapper;
+import oit.is.group5.lec04.model.Chamber;
+import oit.is.group5.lec04.model.ChamberMapper;
 // import oit.is.group5.lec04.model.ChamberUser;
 // import oit.is.group5.lec04.model.UserInfo;
 
@@ -38,23 +38,23 @@ public class Sample41Controller {
     return "sample43.html";
   }
 
-  // @GetMapping("step4")
-  // public String sample44() {
-  //   return "sample44.html";
-  // }
+  @GetMapping("step4")
+  public String sample45() {
+    return "sample45.html";
+  }
 
   // @GetMapping("step6")
   // public String sample46() {
-  //   return "sample46.html";
+  // return "sample46.html";
   // }
 
   // /**
-  //  * 指定したidをPATHパラメータで受け取り，そのidに対応するデータを取得して返す
-  //  *
-  //  * @param id
-  //  * @param model
-  //  * @return
-  //  */
+  // * 指定したidをPATHパラメータで受け取り，そのidに対応するデータを取得して返す
+  // *
+  // * @param id
+  // * @param model
+  // * @return
+  // */
   @GetMapping("step2/{id}")
   public String sample42(@PathVariable Integer id, ModelMap model) {
     Chamber chamber2 = chamberMapper.selectById(id);
@@ -64,15 +64,15 @@ public class Sample41Controller {
   }
 
   // /**
-  //  *
-  //  * @param model Thymeleafにわたすデータを保持するオブジェクト
-  //  * @param prin  ログインユーザ情報が保持されるオブジェクト
-  //  * @return
-  //  *
-  //  *         Transactionalはメソッドでトランザクション処理を実施したい場合に付与する
-  //  *         このメソッドが開始するとトランザクションが開始され，メソッドが正常に終了するとDBへのアクセスが確定する（Runtime
-  //  *         errorなどで止まった場合はロールバックが行われる）
-  //  */
+  // *
+  // * @param model Thymeleafにわたすデータを保持するオブジェクト
+  // * @param prin ログインユーザ情報が保持されるオブジェクト
+  // * @return
+  // *
+  // * Transactionalはメソッドでトランザクション処理を実施したい場合に付与する
+  // * このメソッドが開始するとトランザクションが開始され，メソッドが正常に終了するとDBへのアクセスが確定する（Runtime
+  // * errorなどで止まった場合はロールバックが行われる）
+  // */
   @PostMapping("step3")
   @Transactional
   public String sample43(@RequestParam String chamberName, ModelMap model, Principal prin) {
@@ -88,36 +88,39 @@ public class Sample41Controller {
 
   // @PostMapping("step5")
   // public String sample45(@RequestParam String chamberName, ModelMap model) {
-  //   ArrayList<Chamber> chambers5 = chamberMapper.selectAllByChamberName(chamberName);
-  //   model.addAttribute("chambers5", chambers5);
-  //   return "sample44.html";
+  // ArrayList<Chamber> chambers5 =
+  // chamberMapper.selectAllByChamberName(chamberName);
+  // model.addAttribute("chambers5", chambers5);
+  // return "sample44.html";
   // }
 
   // @GetMapping("step7")
   // @Transactional
   // public String sample47(ModelMap model) {
-  //   ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
-  //   model.addAttribute("chamberUsers7", chamberUsers7);
-  //   return "sample46.html";
+  // ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
+  // model.addAttribute("chamberUsers7", chamberUsers7);
+  // return "sample46.html";
   // }
 
   // @PostMapping("step8")
   // @Transactional
-  // public String sample48(@RequestParam Double height, @RequestParam Integer age, ModelMap model, Principal prin) {
-  //   String loginUser = prin.getName(); // ログインユーザ情報
-  //   UserInfo ui = new UserInfo();
-  //   ui.setUserName(loginUser);
-  //   ui.setAge(age);
-  //   ui.setHeight(height);
-  //   try {
-  //     chamberMapper.insertUserInfo(ui);
-  //   } catch (RuntimeException e) {// 既に身長が登録されているユーザでさらに登録しようとすると実行時例外が発生するので，コンソールに出力してinsertをSkipする
-  //     System.out.println("Exception:" + e.getMessage());
-  //   }
-  //   // insert後にすべての身長が登録されているユーザを取得する
-  //   ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
-  //   model.addAttribute("chamberUsers7", chamberUsers7);
-  //   return "sample46.html";
+  // public String sample48(@RequestParam Double height, @RequestParam Integer
+  // age, ModelMap model, Principal prin) {
+  // String loginUser = prin.getName(); // ログインユーザ情報
+  // UserInfo ui = new UserInfo();
+  // ui.setUserName(loginUser);
+  // ui.setAge(age);
+  // ui.setHeight(height);
+  // try {
+  // chamberMapper.insertUserInfo(ui);
+  // } catch (RuntimeException e) {//
+  // 既に身長が登録されているユーザでさらに登録しようとすると実行時例外が発生するので，コンソールに出力してinsertをSkipする
+  // System.out.println("Exception:" + e.getMessage());
+  // }
+  // // insert後にすべての身長が登録されているユーザを取得する
+  // ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
+  // model.addAttribute("chamberUsers7", chamberUsers7);
+  // return "sample46.html";
   // }
 
 }
