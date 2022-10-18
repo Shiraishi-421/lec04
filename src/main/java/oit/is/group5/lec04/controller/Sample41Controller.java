@@ -33,10 +33,10 @@ public class Sample41Controller {
     return "sample41.html";
   }
 
-  // @GetMapping("step3")
-  // public String sample43() {
-  //   return "sample43.html";
-  // }
+  @GetMapping("step3")
+  public String sample43() {
+    return "sample43.html";
+  }
 
   // @GetMapping("step4")
   // public String sample44() {
