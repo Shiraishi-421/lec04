@@ -38,8 +38,8 @@ public interface ChamberMapper {
   @Select("SELECT chamber.userName,chamber.chamberName,userinfo.age,userinfo.height, from chamber JOIN userinfo ON chamber.userName=userinfo.userName;")
   ArrayList<ChamberUser> selectAllChamberUser();
 
-  // @Insert("INSERT INTO userinfo (userName,age,height) VALUES
-  // (#{userName},#{age},#{height});")
-  // void insertUserInfo(UserInfo userinfo);
+  @Insert("INSERT INTO userinfo (userName,age,height) VALUES(#{userName},#{age},#{height});")
+
+  void insertUserInfo(UserInfo userinfo);
 
 }
